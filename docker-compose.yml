@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  tomcat:
+    image: tomcat:latest
+    container_name: my-tomcat
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./sample.war:/usr/local/tomcat/webapps/sample.war
+    environment:
+      - CATALINA_OPTS=-Djava.security.egd=file:/dev/./urandom
+
+
